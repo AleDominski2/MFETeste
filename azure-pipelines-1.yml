@@ -1,0 +1,16 @@
+trigger: none
+
+schedules:
+- cron: "0 18-23 * * 4"
+  displayName: "Thursday hourly runs from 18:00 to 23:00 UTC"
+  branches:
+    include:
+    - main
+  always: true
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: echo "Pipeline triggered on schedule!"
+  displayName: 'Hello World'
